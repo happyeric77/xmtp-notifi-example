@@ -1,0 +1,27 @@
+import { NotifiWalletContextWrapper } from "@/context/NotifiWalletContextWrapper";
+import type { Metadata } from "next";
+import { Inter } from "next/font/google";
+
+import "./globals.css";
+import { KeplrWalletProvider } from "@/context/KeplrWalletProvider";
+
+const inter = Inter({ subsets: ["latin"] });
+
+export const metadata: Metadata = {
+  title: "Notifi react example",
+  description: "Notifi react example",
+};
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <html lang="en">
+      <body className={inter.className}>
+        <KeplrWalletProvider>{children}</KeplrWalletProvider>
+      </body>
+    </html>
+  );
+}

@@ -1,0 +1,32 @@
+{
+  "name": "@notifi-network/notifi-react-example-v2",
+  "version": "0.91.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build:next": "next build",
+    "start": "next start",
+    "test": "cypress run --component --spec 'cypress/component/NotifiSubscriptionCard.cy.tsx' --browser chrome",
+    "cypress:open": "cypress open",
+    "cypress:ci": "cypress run --component --group notifi-e2e --spec 'cypress/component/NotifiSubscriptionCard.cy.tsx' --browser chrome --record"
+  },
+  "dependencies": {
+    "copy-webpack-plugin": "^12.0.2",
+    "ethers": "^6.11.1",
+    "next": "14.1.4",
+    "react": "^18",
+    "react-dom": "^18",
+    "@notifi-network/notifi-frontend-client": "^0.91.4-alpha.39",
+    "@notifi-network/notifi-graphql": "^0.91.4-alpha.39",
+    "@notifi-network/notifi-react": "^0.91.4-alpha.39",
+    "@notifi-network/notifi-wallet-provider": "^0.91.4-alpha.39"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "crypto-browserify": "^3.12.0",
+    "typescript": "^5",
+    "@keplr-wallet/types": "^0.12.108"
+  }
+}
