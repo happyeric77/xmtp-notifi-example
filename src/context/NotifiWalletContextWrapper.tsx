@@ -1,6 +1,10 @@
-'use client';
+"use client";
 
-import { NotifiWalletProvider } from '@notifi-network/notifi-wallet-provider';
+import NotifiWalletProvider from "./NotifiWallets";
+
+// import { NotifiWalletProvider } from "@notifi-network/notifi-wallet-provider";
+
+// import { NotifiWalletProvider } from '@notifi-network/notifi-wallet-provider';
 
 export const NotifiWalletContextWrapper: React.FC<React.PropsWithChildren> = ({
   children,
@@ -14,7 +18,7 @@ export const NotifiWalletContextWrapper: React.FC<React.PropsWithChildren> = ({
       </p>
       <ul>
         <li>
-          Make sure your browser{' '}
+          Make sure your browser{" "}
           <span style={{ fontWeight: 800 }}>
             has at least one following supported wallets installed
           </span>

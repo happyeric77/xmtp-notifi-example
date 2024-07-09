@@ -20,7 +20,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <KeplrWalletProvider>{children}</KeplrWalletProvider>
+        <NotifiWalletContextWrapper>{children}</NotifiWalletContextWrapper>
+        {/* <KeplrWalletProvider>{children}</KeplrWalletProvider> */}
       </body>
     </html>
   );

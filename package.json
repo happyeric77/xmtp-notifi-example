@@ -19,7 +19,13 @@
     "@notifi-network/notifi-frontend-client": "^0.91.4-alpha.39",
     "@notifi-network/notifi-graphql": "^0.91.4-alpha.39",
     "@notifi-network/notifi-react": "^0.91.4-alpha.39",
-    "@notifi-network/notifi-wallet-provider": "^0.91.4-alpha.39"
+    "@notifi-network/notifi-wallet-provider": "^0.91.4-alpha.39",
+    "bech32-converting": "^1.0.9",
+    "buffer": "^6.0.3",
+    "@burnt-labs/abstraxion": "^1.0.0-alpha.45",
+    "viem": "^1.11.0",
+    "wagmi": "^1.4.2",
+    "@solana/web3.js": "^1.47.1"
   },
   "devDependencies": {
     "@types/node": "^20",
