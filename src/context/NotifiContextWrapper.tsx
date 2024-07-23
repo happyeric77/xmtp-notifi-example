@@ -6,13 +6,11 @@ import {
 } from "@notifi-network/notifi-frontend-client";
 import { NotifiContextProvider } from "@notifi-network/notifi-react";
 import { MemoProgramHardwareLoginPlugin } from "@notifi-network/notifi-solana-hw-login";
-// import { useWallets } from '@notifi-network/notifi-wallet-provider';
+import { useWallets } from "@notifi-network/notifi-wallet-provider";
 import { Connection, clusterApiUrl } from "@solana/web3.js";
 import { getBytes } from "ethers";
 import { useSearchParams } from "next/navigation";
 import { PropsWithChildren, useMemo } from "react";
-import { useKeplrContext } from "./KeplrWalletProvider";
-import { useWallets } from "./NotifiWallets";
 
 export const NotifiContextWrapper: React.FC<PropsWithChildren> = ({
   children,
@@ -37,14 +35,6 @@ export const NotifiContextWrapper: React.FC<PropsWithChildren> = ({
     !wallets[selectedWallet].signArbitrary
   )
     return null;
-  const { key, signArbitrary } = useKeplrContext();
-  const keyBase64 = useMemo(
-    () =>
-      key !== undefined
-        ? Buffer.from(key.pubKey).toString("base64")
-        : undefined,
-    [key]
-  );
   let accountAddress = "";
   let walletPublicKey = "";
   let signMessage;
@@ -198,31 +188,6 @@ export const NotifiContextWrapper: React.FC<PropsWithChildren> = ({
           {children}
         </NotifiContextProvider>
       ) : null}
-      {/* {key !== undefined && keyBase64 !== undefined ? (
-        <NotifiContextProvider
-          tenantId={tenantId}
-          env={env}
-          walletBlockchain={"INJECTIVE"} // Switching between Cosmos chains are not supported yet
-          walletPublicKey={keyBase64}
-          accountAddress={key.bech32Address}
-          signMessage={async (message: Uint8Array): Promise<Uint8Array> => {
-            const result = await signArbitrary(
-              "injective-1",
-              key.bech32Address,
-              message
-            );
-            return Buffer.from(result.signature, "base64");
-          }}
-          cardId={cardId}
-          inputs={{
-            pricePairs: pricePairInputs,
-            walletAddress: [{ label: "", value: accountAddress }],
-          }}
-          notificationCountPerPage={8}
-        >
-          {children}
-        </NotifiContextProvider> */}
-      {/* ) : null} */}
     </>
   );
 };

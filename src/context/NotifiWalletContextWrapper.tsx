@@ -1,10 +1,6 @@
 "use client";
 
-import NotifiWalletProvider from "./NotifiWallets";
-
-// import { NotifiWalletProvider } from "@notifi-network/notifi-wallet-provider";
-
-// import { NotifiWalletProvider } from '@notifi-network/notifi-wallet-provider';
+import { NotifiWalletProvider } from "@notifi-network/notifi-wallet-provider";
 
 export const NotifiWalletContextWrapper: React.FC<React.PropsWithChildren> = ({
   children,

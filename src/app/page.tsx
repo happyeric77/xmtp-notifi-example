@@ -1,18 +1,14 @@
 "use client";
 
-import { useKeplrContext } from "@/context/KeplrWalletProvider";
-import { useWallets } from "@/context/NotifiWallets";
-import { Wallets } from "@/types";
 import { objectKeys } from "@notifi-network/notifi-frontend-client";
-// import { Types, useWallets } from "@notifi-network/notifi-wallet-provider";
+import { Types, useWallets } from "@notifi-network/notifi-wallet-provider";
 
 import { useRouter } from "next/navigation";
 
 export default function Home() {
   const { wallets } = useWallets();
   const router = useRouter();
-  // const { key, connect } = useKeplrContext();
-  const supportedWallets: (keyof Wallets)[] = [
+  const supportedWallets: (keyof Types.Wallets)[] = [
     "metamask",
     "keplr",
     "coinbase",
@@ -38,10 +34,6 @@ export default function Home() {
             </button>
           );
         })}
-      {/* <button onClick={() => connect().then(() => router.push("/notifi"))}>
-        {key !== undefined ? key.bech32Address : "Connect"}
-      </button> */}
-      ;
     </div>
   );
 }
